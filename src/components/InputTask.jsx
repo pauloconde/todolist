@@ -12,13 +12,13 @@ export default function InputTask(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input) {
+    if (input.trim()) {
       const newTask = {
         id: uuidv4(),
-        text: input,
+        text: input.trim(),
         completed: false,
       };
-      console.log(newTask);
+      props.onSubmit(newTask);
     }
   };
 
