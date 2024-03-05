@@ -18,6 +18,7 @@ export default function InputTask(props) {
         text: input.trim(),
         completed: false,
       };
+      setInput('');
       props.onSubmit(newTask);
     }
   };
@@ -30,6 +31,7 @@ export default function InputTask(props) {
         placeholder='Add new task here...'
         name='input-task-input'
         onChange={handleInputChange}
+        value = {input}
       />
       <button className='input-task-button'>
         <TbPlus className='input-task-button-icon' />
